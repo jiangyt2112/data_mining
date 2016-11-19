@@ -23,15 +23,15 @@ int  splitString(const string & strSrc, const std::string& strDelims, vector<str
 
 int main(int argc, char* argv[])
 {
-	ifstream file ( "hw1air_data.csv" ); // declare file stream: 					http://www.cplusplus.com/reference/iostream/ifstream/
+	ifstream file ( "hw1air_data.csv" ); // declare file stream
 	string value;
 	while ( file.good() )
 	{
-		getline(file,value,'\n'); // read a string until next comma: 		http://www.cplusplus.com/reference/string/getline/
+		getline(file,value,'\n'); // read a string until next line
 		cout << string( value, 0, value.length() )<<endl; // display value removing the first and the last character from it
-		vector<string> splitStrs; //把分割后的字符串存在vector里面
-		splitString(value,",", splitStrs); //调用自定义的分割函数  
-		//显示分割后的字符串数组(用vector存储)  
+		vector<string> splitStrs; //split string in a vector
+		splitString(value,",", splitStrs); //call the split func  
+		//show the splited strings 
 		vector<string>::iterator iter;  
 		for (iter = splitStrs.begin(); iter != splitStrs.end(); ++iter) {  
 			cout  << *iter<<endl ;  
